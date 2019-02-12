@@ -261,7 +261,7 @@ export default class TabBar<T: *> extends React.Component<Props<T>, State> {
           cummulativeWidth += tabWidth[i - 1];
         }
         outputRange.push(cummulativeWidth + tabWidth[i] * 0.5);
-        scaleOutputRange.push(tabWidth[i]);
+        scaleOutputRange.push(tabWidth[i] - 10);
       }
 
       // handle case when only one section is present
@@ -492,7 +492,7 @@ export default class TabBar<T: *> extends React.Component<Props<T>, State> {
       },
     }
   ) => {
-    this.tabWidth[tabIndex] = width;
+    this.tabWidth[tabIndex] = width
     if (
       Object.keys(this.tabWidth).length ===
       this.props.navigationState.routes.length
@@ -717,7 +717,7 @@ export default class TabBar<T: *> extends React.Component<Props<T>, State> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   scroll: {
     overflow: Platform.OS === 'web' ? ('auto': any) : 'scroll',
